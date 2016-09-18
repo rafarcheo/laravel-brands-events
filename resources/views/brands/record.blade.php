@@ -1,4 +1,4 @@
-@extends('users.layout')
+@extends('brands.layout')
 
 @section('content')
 
@@ -7,18 +7,18 @@
         <h2>Edytuj</h2>
         <form action="" method="post">
             <p><input type="hidden" name="_method" value="put"></p>
-            <p><input type="hidden" name="user_id" value="{{ $user->id }}"></p>
+            <p><input type="hidden" name="brand_id" value="{{ $brand->id }}"></p>
             <div class="form-group">
-                 <label for="">nazwa użytkownika </lanel>
-                <input type="text" class="form-control" name="name" value="{{ $user->name }}">
+                 <label for="">nazwa</lanel>
+                <input type="text" class="form-control" name="name" value="{{ $brand->name }}">
             </div>
             <div class="form-group">
-                 <label for="">e-mail </lanel> 
-                <input type="text" class="form-control" name="email" value="{{ $user->email }}">
+                 <label for="">Treść </lanel> 
+                <input type="text" class="form-control" name="content" value="{{ $brand->content }}">
             </div>
             <div class="form-group">
                  <label for="">hasło </lanel> 
-                <input type="password" class="form-control" name="password" value="{{ $user->password }}">
+                <input type="text" class="form-control" name="image" value="{{ $brand->image }}">
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" name="wyslij">

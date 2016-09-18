@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', 'PageController@index');
+Route::get('/', 'UsersController@getIndex');
 Route::get('/list-brands/', 'PageController@listBrands');
 Route::controller('users', 'UsersController');
+Route::controller('brands', 'BrandsController');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
