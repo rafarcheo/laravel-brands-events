@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'PageController@index');
-
+Route::get('/list-brands/', 'PageController@listBrands');
+Route::controller('users', 'UsersController');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

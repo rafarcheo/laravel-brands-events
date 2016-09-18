@@ -14,4 +14,8 @@ class Brand extends Model
     protected $fillable = [
         'name', 'content', 'image',
     ];
+
+    public function users(){
+    	return $this->belongsToMany('App\User');
+    }
 }
