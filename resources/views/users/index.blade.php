@@ -1,47 +1,22 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('users.layout')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('content')
+    @foreach ($users as $user)
 
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            @foreach ($users as $user)
-                <div class="content">
-                    <div class="title">{{ $user->name }}</div>
-                </div>
-            @endforeach
+    <div class="row">
+        <div class="title">{{ $user->name }}</div>
+        <div class="">{{ $user->email }}</div>
+        <div class="">{{ $user->name }}</div>
+        <div>
+            <a href="users/record/{{ $user->id }}">Edytuj</a>
         </div>
-    </body>
-</html>
+        <div>
+            <form action="users/record" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                <input type="submit" value="USUŃ">
+            </form>
+        </div>
+    </div>
+    @endforeach
+@endsection

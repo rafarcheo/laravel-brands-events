@@ -12,6 +12,7 @@ class UsersController extends Controller
 {
     public function getIndex() {
     	$users = User::all();
+
     	return View('users.index')->with('users', $users);
     }
 
@@ -30,13 +31,13 @@ class UsersController extends Controller
 
     function getRecord($id) {
     	$user = User::find($id);
-    	return View('user.record')->with('user', $user);
+    	return View('users.record')->with('user', $user);
     }
 
     function putRecord() {
     	$user = User::find(Input::get('user_id'));
-    	$user->username = Input::get('username');
-    	$user->emile = Input::get('email');
+    	$user->name = Input::get('name');
+    	$user->email = Input::get('email');
     	$user->save();
     	return Redirect::to('users');
     }
